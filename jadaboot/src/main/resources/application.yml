@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: jadaboot
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/jada
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: jedi
+    password: 1q2w3e4r	
+    hikari:
+      minimum-idle: 5
+      maximum-pool-size: 20        # 최대 연결 수
+      idle-timeout: 30000          # 유휴 연결이 풀에서 제거되기까지의 시간 (밀리초)
+      max-lifetime: 1800000        # 각 연결의 최대 수명 (밀리초)
+      connection-timeout: 30000    # 풀에서 연결을 가져올 때까지 기다리는 시간 (밀리초)
+mybatis:
+  mapper-locations:
+  - classpath:mapper/*.xml
